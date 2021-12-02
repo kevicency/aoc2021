@@ -18,7 +18,7 @@ def raw(day):
             raise ValueError("Requesting input failed.")
         file.write_text(response.text.strip())
 
-    return file.read_text().splitlines()
+    return file.read_text().strip()
 
 
 def timed():
