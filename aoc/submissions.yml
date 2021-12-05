@@ -3,10 +3,54 @@
   '1':
     '1228':
       message: That's the right answer!
-      time: 0.173
+      time: 0.188
     solution: '1228'
   '2':
     '1257':
       message: That's the right answer!
-      time: 0.126
+      time: 0.156
     solution: '1257'
+'2':
+  '1':
+    '2070300':
+      message: That's the right answer!
+      time: 0.133
+    solution: '2070300'
+  '2':
+    '2078985210':
+      message: That's the right answer!
+      time: 0.175
+    solution: '2078985210'
+'3':
+  '1':
+    '3374136':
+      message: That's the right answer!
+      time: 1.173
+    solution: '3374136'
+  '2':
+    '4432698':
+      message: That's the right answer!
+      time: 0.284
+    solution: '4432698'
+'4':
+  '1':
+    '2745':
+      message: That's the right answer!
+      time: 35.987
+    solution: '2745'
+  '2':
+    '6594':
+      message: That's the right answer!
+      time: 78.231
+    solution: '6594'
+'5':
+  '1':
+    '5197':
+      message: That's the right answer!
+      time: 7.185
+    solution: '5197'
+  '2':
+    '18605':
+      message: That's the right answer!
+      time: 140.952
+    solution: '18605'

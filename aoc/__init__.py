@@ -1,3 +1,4 @@
+import functools
 import pathlib
 import time
 import re
@@ -31,20 +32,20 @@ def raw(day):
     return file.read_text().strip()
 
 
-def submit_core(day, fn: Callable):
+def submit_core(day, func: Callable):
     day = str(day)
-    part = "1" if fn.__name__ == "part_one" else "2"
+    part = "1" if func.__name__ == "part_one" else "2"
     submissions = yaml.full_load(SUBMISSIONS_FILE.read_text())
     current = submissions.setdefault(day, {"1": {}, "2": {}})[part]
 
     start = time.time_ns()
-    solution = fn()
+    solution = func()
 
     if solution is None:
         return
 
     ms = (time.time_ns() - start) / (10 ** 6)
-    print(f"{fn.__name__}: {solution} ({ms:.2f} ms)")
+    print(f"{func.__name__}: {solution} ({ms:.2f} ms)")
 
     solution = str(solution)
 
@@ -77,15 +78,16 @@ def submit_core(day, fn: Callable):
                 webbrowser.open(response.url)
         else:
             print("❌ " + message)
-        current[solution] = {"message": message, time: ms}
+        current[solution] = {"message": message, "time": ms}
 
     SUBMISSIONS_FILE.write_text(yaml.dump(submissions))
 
 
 def submit(day: int):
-    def decorator(fn: Callable):
+    def decorator(func: Callable):
+        @functools.wraps(func)
         def wrapper():
-            submit_core(day, fn)
+            submit_core(day, func)
 
         return wrapper
 
@@ -103,4 +105,3 @@ def timed():
         return wrapper_method
 
     return inner_decorator
-
