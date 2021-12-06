@@ -89,6 +89,8 @@ def submit(day: int):
         def wrapper():
             submit_core(day, func)
 
+        wrapper()
+
         return wrapper
 
     return decorator
