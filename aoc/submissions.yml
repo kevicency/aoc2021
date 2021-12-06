@@ -54,3 +54,17 @@
       message: That's the right answer!
       time: 140.952
     solution: '18605'
+'6':
+  '1':
+    '331266961':
+      message: That's not the right answer; your answer is too high!
+      time: 39690.888
+    '350605':
+      message: That's the right answer!
+      time: 1.859
+    solution: '350605'
+  '2':
+    '1592778185024':
+      message: That's the right answer!
+      time: 5.591
+    solution: '1592778185024'
