@@ -72,7 +72,10 @@
   '1':
     '339321':
       message: That's the right answer!
-      time: 0.408
+      time: 0.17
+    '339321.0':
+      message: You don't seem to be solving the right level!
+      time: 0.18
     '37':
       message: You don't seem to be solving the right level!
       time: 0.57
@@ -80,7 +83,10 @@
   '2':
     '95476244':
       message: That's the right answer!
-      time: 1.141
+      time: 0.711
+    '95476244.0':
+      message: You don't seem to be solving the right level!
+      time: 0.945
     '95476248':
       message: You don't seem to be solving the right level!
       time: 1.124

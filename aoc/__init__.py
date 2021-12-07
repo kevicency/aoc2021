@@ -39,7 +39,7 @@ def submit_core(day, func: Callable):
     current = submissions.setdefault(day, {"1": {}, "2": {}})[part]
 
     start = time.time_ns()
-    solution = int(func())
+    solution = func()
 
     if solution is None:
         return
