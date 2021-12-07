@@ -78,10 +78,10 @@
       time: 0.57
     solution: '339321'
   '2':
-    '168':
-      message: You don't seem to be solving the right level!
-      time: 0.17
     '95476244':
       message: That's the right answer!
-      time: 331.56
+      time: 1.141
+    '95476248':
+      message: You don't seem to be solving the right level!
+      time: 1.124
     solution: '95476244'
