@@ -53,7 +53,7 @@ def submit_core(day, func: Callable):
         print("✅ " + current[solution]['message'])
         current[solution]['time'] = ms
     elif solution in current:
-        print('❗️ Solution already submitted: ' + current[solution])
+        print('❗️ Solution already submitted: ' + current[solution]['message'])
     else:
         response = requests.post(
             url=URL.format(day=day) + "/answer",

@@ -91,3 +91,35 @@
       message: You don't seem to be solving the right level!
       time: 1.124
     solution: '95476244'
+'8':
+  '1':
+    '219':
+      message: That's not the right answer; your answer is too low!
+      time: 0.222
+    '26':
+      message: You don't seem to be solving the right level!
+      time: 0.013
+    '440':
+      message: That's the right answer!
+      time: 0.255
+    solution: '440'
+  '2':
+    '1046281':
+      message: That's the right answer!
+      time: 5.669
+    '10462810':
+      message: You don't seem to be solving the right level!
+      time: 5.938
+    '1082461':
+      message: You don't seem to be solving the right level!
+      time: 5.537
+    '5353':
+      message: That's not the right answer; your answer is too low!
+      time: 1.177
+    '61229':
+      message: You don't seem to be solving the right level!
+      time: 0.567
+    '8250':
+      message: That's not the right answer; your answer is too low!
+      time: 0.794
+    solution: '1046281'
