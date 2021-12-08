@@ -101,12 +101,12 @@
       time: 0.013
     '440':
       message: That's the right answer!
-      time: 0.255
+      time: 0.164
     solution: '440'
   '2':
     '1046281':
       message: That's the right answer!
-      time: 5.669
+      time: 4.76
     '10462810':
       message: You don't seem to be solving the right level!
       time: 5.938
