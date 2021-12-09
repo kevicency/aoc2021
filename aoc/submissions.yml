@@ -130,13 +130,19 @@
       time: 1.348
     '480':
       message: That's the right answer!
-      time: 85.279
+      time: 97.092
+    '74639':
+      message: You don't seem to be solving the right level!
+      time: 99.976
     solution: '480'
   '2':
     '1045660':
       message: That's the right answer!
-      time: 116.898
+      time: 139.947
     '1134':
       message: That's not the right answer; your answer is too low!
       time: 0.837
+    '22680':
+      message: You don't seem to be solving the right level!
+      time: 154.715
     solution: '1045660'
