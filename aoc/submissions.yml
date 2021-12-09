@@ -123,3 +123,20 @@
       message: That's not the right answer; your answer is too low!
       time: 0.794
     solution: '1046281'
+'9':
+  '1':
+    '15':
+      message: That's not the right answer!
+      time: 1.348
+    '480':
+      message: That's the right answer!
+      time: 85.279
+    solution: '480'
+  '2':
+    '1045660':
+      message: That's the right answer!
+      time: 116.898
+    '1134':
+      message: That's not the right answer; your answer is too low!
+      time: 0.837
+    solution: '1045660'
