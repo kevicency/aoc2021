@@ -10,6 +10,20 @@
       message: That's the right answer!
       time: 0.156
     solution: '1257'
+'10':
+  '1':
+    '26397':
+      message: That's not the right answer; your answer is too low!
+      time: 0.327
+    '469755':
+      message: That's the right answer!
+      time: 5.452
+    solution: '469755'
+  '2':
+    '2762335572':
+      message: That's the right answer!
+      time: 6.007
+    solution: '2762335572'
 '2':
   '1':
     '2070300':
