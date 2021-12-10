@@ -36,7 +36,7 @@ def submit_core(day, func: Callable):
     day = str(day)
     part = "1" if func.__name__ == "part_one" else "2"
     submissions = yaml.full_load(SUBMISSIONS_FILE.read_text())
-    current = submissions.setdefault(day, {"1": {}, "2": {}})[part]
+    current = submissions.setdefault(day.rjust(2, '0'), {"1": {}, "2": {}})[part]
 
     start = time.time_ns()
     solution = func()

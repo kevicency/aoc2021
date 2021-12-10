@@ -9,6 +9,9 @@ requests = "*"
 numpy = "*"
 pyyaml = "*"
 beautifulsoup4 = "*"
+dash = "*"
+plotly = "*"
+pandas = "*"
 
 [dev-packages]
 

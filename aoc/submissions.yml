@@ -1,5 +1,5 @@
-'0': null
-'1':
+'00': null
+'01':
   '1':
     '1228':
       message: That's the right answer!
@@ -10,21 +10,7 @@
       message: That's the right answer!
       time: 0.156
     solution: '1257'
-'10':
-  '1':
-    '26397':
-      message: That's not the right answer; your answer is too low!
-      time: 0.327
-    '469755':
-      message: That's the right answer!
-      time: 5.452
-    solution: '469755'
-  '2':
-    '2762335572':
-      message: That's the right answer!
-      time: 6.007
-    solution: '2762335572'
-'2':
+'02':
   '1':
     '2070300':
       message: That's the right answer!
@@ -35,7 +21,7 @@
       message: That's the right answer!
       time: 0.175
     solution: '2078985210'
-'3':
+'03':
   '1':
     '3374136':
       message: That's the right answer!
@@ -46,7 +32,7 @@
       message: That's the right answer!
       time: 0.284
     solution: '4432698'
-'4':
+'04':
   '1':
     '2745':
       message: That's the right answer!
@@ -57,7 +43,7 @@
       message: That's the right answer!
       time: 78.231
     solution: '6594'
-'5':
+'05':
   '1':
     '5197':
       message: That's the right answer!
@@ -68,7 +54,7 @@
       message: That's the right answer!
       time: 140.952
     solution: '18605'
-'6':
+'06':
   '1':
     '331266961':
       message: That's not the right answer; your answer is too high!
@@ -82,7 +68,7 @@
       message: That's the right answer!
       time: 5.591
     solution: '1592778185024'
-'7':
+'07':
   '1':
     '339321':
       message: That's the right answer!
@@ -105,7 +91,7 @@
       message: You don't seem to be solving the right level!
       time: 1.124
     solution: '95476244'
-'8':
+'08':
   '1':
     '219':
       message: That's not the right answer; your answer is too low!
@@ -137,7 +123,7 @@
       message: That's not the right answer; your answer is too low!
       time: 0.794
     solution: '1046281'
-'9':
+'09':
   '1':
     '15':
       message: That's not the right answer!
@@ -160,3 +146,17 @@
       message: You don't seem to be solving the right level!
       time: 154.715
     solution: '1045660'
+'10':
+  '1':
+    '26397':
+      message: That's not the right answer; your answer is too low!
+      time: 0.327
+    '469755':
+      message: That's the right answer!
+      time: 4.04
+    solution: '469755'
+  '2':
+    '2762335572':
+      message: That's the right answer!
+      time: 4.29
+    solution: '2762335572'
