@@ -4,6 +4,7 @@ import dash
 import yaml
 from dash import html, dcc
 import plotly.graph_objects as go
+import numpy as np
 from json import load
 from plotly.subplots import make_subplots
 from constants import ROOT_DIR, SUBMISSIONS_FILE, AOC_DIR
@@ -55,7 +56,8 @@ def get_figure(locs=None, times=None):
         secondary_y=True,
     )
 
-    fig.update_layout(title_text=f"Total Lines of code / Execution time :: {sum(locs)} / {round(sum(times))}ms")
+    fig.update_layout(title_text=f"Total(avg) Lines of code / Execution time :: " +
+                                 f"{sum(locs)}({float(np.mean(locs))}) / {round(sum(times))}({round(float(np.mean(times)))})ms")
     fig.update_xaxes(title_text="day")
     fig.update_yaxes(title_text="#loc", secondary_y=False)
     fig.update_yaxes(title_text="execution time in <b>ms</b>", secondary_y=True)
