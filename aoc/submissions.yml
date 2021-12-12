@@ -91,7 +91,7 @@
       message: You don't seem to be solving the right level!
       time: 1.124
     solution: '95476244'
-'08':
+08:
   '1':
     '219':
       message: That's not the right answer; your answer is too low!
@@ -123,7 +123,7 @@
       message: That's not the right answer; your answer is too low!
       time: 0.794
     solution: '1046281'
-'09':
+09:
   '1':
     '15':
       message: That's not the right answer!
@@ -160,3 +160,32 @@
       message: That's the right answer!
       time: 4.29
     solution: '2762335572'
+'11':
+  '1':
+    '0':
+      message: You don't seem to be solving the right level!
+      time: 59.294
+    '1644':
+      message: That's the right answer!
+      time: 31.184
+    '1656':
+      message: That's not the right answer; your answer is too high!
+      time: 41.273
+    '[0 0 0 0 0 0 0 0 0 0]':
+      message: You don't seem to be solving the right level!
+      time: 2.057
+    solution: '1644'
+  '2':
+    '165':
+      message: That's not the right answer; your answer is too low!
+      time: 54.111
+    '170':
+      message: You don't seem to be solving the right level!
+      time: 53.881
+    '228':
+      message: That's not the right answer; your answer is too low!
+      time: 121.188
+    '229':
+      message: That's the right answer!
+      time: 57.813
+    solution: '229'
