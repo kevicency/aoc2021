@@ -171,9 +171,6 @@
     '1656':
       message: That's not the right answer; your answer is too high!
       time: 41.273
-    '[0 0 0 0 0 0 0 0 0 0]':
-      message: You don't seem to be solving the right level!
-      time: 2.057
     solution: '1644'
   '2':
     '165':
@@ -189,3 +186,23 @@
       message: That's the right answer!
       time: 57.813
     solution: '229'
+'12':
+  '1':
+    '134862':
+      message: You don't seem to be solving the right level!
+      time: 474.422
+    '5212':
+      message: That's the right answer!
+      time: 19.865
+    solution: '5212'
+  '2':
+    '11663':
+      message: You don't seem to be solving the right level!
+      time: 47.513
+    '134862':
+      message: That's the right answer!
+      time: 467.884
+    '5212':
+      message: That's not the right answer; your answer is too low!
+      time: 24.979
+    solution: '134862'

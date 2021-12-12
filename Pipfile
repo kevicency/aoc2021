@@ -12,6 +12,8 @@ beautifulsoup4 = "*"
 dash = "*"
 plotly = "*"
 pandas = "*"
+networkx = "*"
+matplotlib = "*"
 
 [dev-packages]
 
