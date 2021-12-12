@@ -1,19 +1,14 @@
+import sys
+
 import dash
 import yaml
 from dash import html, dcc
 import plotly.graph_objects as go
-import plotly.express as px
 from json import load
-from sys import argv
-
 from plotly.subplots import make_subplots
-
-from aoc import ROOT_DIR, SUBMISSIONS_FILE
+from constants import ROOT_DIR, SUBMISSIONS_FILE, AOC_DIR
 
 DAYS = [n for n in range(1, 25 + 1)]
-
-app = dash.Dash()  # initialising dash app
-df = px.data.stocks()  # reading stock price dataset
 
 
 def loc(day):
@@ -24,7 +19,7 @@ def loc(day):
     return 0
 
 
-def locs():
+def get_locs():
     return [loc(n) for n in DAYS]
 
 
@@ -39,27 +34,28 @@ def time(day, submissions):
     return 0
 
 
-def times():
+def get_times():
     submissions = yaml.full_load(SUBMISSIONS_FILE.read_text())
-    print(submissions)
     return [time(n, submissions) for n in DAYS]
 
 
-def get_figure():
-    # Function for creating line chart showing Google stock prices over time
+def get_figure(locs=None, times=None):
+    locs = locs or get_locs()
+    times = times or get_times()
+
     fig = make_subplots(specs=[[{"secondary_y": True}]])
 
     fig.add_trace(
-        go.Scatter(x=DAYS, y=locs(), name="Lines of code"),
-        secondary_y=False,
+        go.Scatter(x=DAYS, y=locs, name="Lines of code"),
+        secondary_y=False
     )
 
     fig.add_trace(
-        go.Scatter(x=DAYS, y=times(), name="Execution time"),
+        go.Scatter(x=DAYS, y=times, name="Execution time"),
         secondary_y=True,
     )
 
-    # fig.update_layout(title_text="AoC 2021")
+    fig.update_layout(title_text=f"Total Lines of code / Execution time :: {sum(locs)} / {round(sum(times))}ms")
     fig.update_xaxes(title_text="day")
     fig.update_yaxes(title_text="#loc", secondary_y=False)
     fig.update_yaxes(title_text="execution time in <b>ms</b>", secondary_y=True)
@@ -67,15 +63,27 @@ def get_figure():
     return fig
 
 
-app.layout = html.Div(id='parent', children=[
-    html.H1(id='H1', children='AoC 2021 Stats',
-            style={'textAlign': 'center', 'marginTop': 40, 'marginBottom': 40}),
-    dcc.Graph(id='line_plot', figure=get_figure()),
-    html.H2(id='H2', children='Totals',
-            style={'textAlign': 'center', 'marginTop': 40}),
-    html.Div(id="totals", children=f"Lines of code: {sum(locs())} <> Execution Time: {sum(times())}ms",
-             style={'textAlign': 'center', 'marginTop': 20, 'marginBottom': 40})
-])
+def run_server():
+    locs = get_locs()
+    times = get_times()
+
+    app = dash.Dash()
+    app.layout = html.Div(id='parent', children=[
+        html.H1(id='H1', children='AoC 2021 Stats',
+                style={'textAlign': 'center', 'marginTop': 40, 'marginBottom': 40}),
+        dcc.Graph(id='line_plot', figure=get_figure(locs, times)),
+        html.H2(id='H2', children='Totals',
+                style={'textAlign': 'center', 'marginTop': 40}),
+        html.Div(id="totals", children=f"Lines of code: {sum(locs)} <> Execution Time: {round(sum(times))}ms",
+                 style={'textAlign': 'center', 'marginTop': 20, 'marginBottom': 40})
+    ])
+    app.run_server()
+
 
 if __name__ == '__main__':
-    app.run_server()
+    print(*sys.argv)
+    if len(sys.argv) > 1 and sys.argv[1] == 'serve':
+        run_server()
+    else:
+        print('Generating stats chart...')
+        get_figure().write_image(AOC_DIR / 'stats.png')
