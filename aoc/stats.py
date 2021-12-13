@@ -47,12 +47,12 @@ def get_figure(locs=None, times=None):
     fig = make_subplots(specs=[[{"secondary_y": True}]])
 
     fig.add_trace(
-        go.Scatter(x=DAYS, y=locs, name="Lines of code"),
+        go.Scatter(x=DAYS, y=locs, name="Lines of code", fill="tozeroy"),
         secondary_y=False
     )
 
     fig.add_trace(
-        go.Scatter(x=DAYS, y=times, name="Execution time"),
+        go.Scatter(x=DAYS, y=times, name="Execution time", fill="tozeroy"),
         secondary_y=True,
     )
 
