@@ -206,3 +206,17 @@
       message: That's not the right answer; your answer is too low!
       time: 24.979
     solution: '134862'
+'13':
+  '1':
+    '17':
+      message: That's not the right answer!
+      time: 0.255
+    '842':
+      message: That's the right answer!
+      time: 3.144
+    solution: '842'
+  '2':
+    BFKRCJZU:
+      message: That's the right answer!
+      time: 3.229
+    solution: BFKRCJZU
