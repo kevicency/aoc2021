@@ -12,6 +12,10 @@ import requests
 from .constants import INPUTS_DIR, COOKIES, SUBMISSIONS_FILE, URL, EXAMPLES_FILE
 
 
+def pad(x):
+    return str(x).ljust(14)
+
+
 def raw(day):
     day = str(day)
     file = INPUTS_DIR / f"day{day.rjust(2, '0')}.txt"
@@ -41,7 +45,7 @@ def submit_core(day, func: Callable):
 
     icon, message, solution = '', '', str(solution)
     if "solution" in current and current["solution"] == solution:
-        icon, message = "✅", current[solution]['message']
+        icon, message = "✅", ""  # current[solution]['message']
         current[solution]['time'] = min(current[solution]['time'], ms)
     elif solution in current:
         icon, message = "❗️", current[solution]['message']
@@ -63,7 +67,7 @@ def submit_core(day, func: Callable):
             icon, message = "⏳", response_text
         else:
             if response_text.startswith("That's the right answer"):
-                icon = "✅"
+                icon, message = "✅", ""
                 current["solution"] = solution
                 if part == "1":
                     webbrowser.open(response.url)
@@ -71,7 +75,9 @@ def submit_core(day, func: Callable):
                 icon = "❗️"
             current[solution] = {"message": message, "time": ms}
 
-    print('\t'.join([f"{icon} input:", str(solution), f"({ms:.2f} ms)"]))
+    print(' '.join([f"{icon} input:  ", pad(solution), f"({ms:.2f} ms)"]))
+    if len(message):
+        print(message)
 
     SUBMISSIONS_FILE.write_text(yaml.dump(submissions))
 
@@ -84,7 +90,8 @@ def run_example(day: int, func: Callable):
     input = example['input']
 
     if input == '':
-        print(f"example:\tSkipping example; no input")
+        print(f"⏩ example: {pad('no input')} (skipped)")
+        return True
 
     start = time.time_ns()
     solution = func(input)
@@ -94,7 +101,7 @@ def run_example(day: int, func: Callable):
     success = solution == expected
     icon = "✅" if success else "❗"
 
-    print('\t'.join([f"{icon} example:", str(solution), f"({ms:.2f} ms)"]))
+    print(' '.join([f"{icon} example:", pad(solution), f"({ms:.2f} ms)"]))
 
     return success
 

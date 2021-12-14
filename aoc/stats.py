@@ -15,7 +15,7 @@ DAYS = [n for n in range(1, 25 + 1)]
 def loc(day):
     nb = ROOT_DIR / f"day{str(day).rjust(2, '0')}.ipynb"
     if nb.exists():
-        cells = load(nb.open())['cells']
+        cells = load(nb.open())['cells'][:3]
         sources = [c['source'] for c in cells if c['cell_type'] == 'code']
         return sum(len([line for line in source if line != '\n']) for source in sources)
     return 0

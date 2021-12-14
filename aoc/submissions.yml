@@ -3,12 +3,12 @@
   '1':
     '1228':
       message: That's the right answer!
-      time: 0.188
+      time: 0.628
     solution: '1228'
   '2':
     '1257':
       message: That's the right answer!
-      time: 0.156
+      time: 0.476
     solution: '1257'
 '02':
   '1':
@@ -25,7 +25,7 @@
   '1':
     '3374136':
       message: That's the right answer!
-      time: 1.173
+      time: 1.093
     solution: '3374136'
   '2':
     '4432698':
@@ -36,23 +36,23 @@
   '1':
     '2745':
       message: That's the right answer!
-      time: 35.987
+      time: 23.387
     solution: '2745'
   '2':
     '6594':
       message: That's the right answer!
-      time: 78.231
+      time: 74.173
     solution: '6594'
 '05':
   '1':
     '5197':
       message: That's the right answer!
-      time: 7.185
+      time: 6.89
     solution: '5197'
   '2':
     '18605':
       message: That's the right answer!
-      time: 140.952
+      time: 101.22
     solution: '18605'
 '06':
   '1':
@@ -61,12 +61,12 @@
       time: 39690.888
     '350605':
       message: That's the right answer!
-      time: 1.859
+      time: 1.194
     solution: '350605'
   '2':
     '1592778185024':
       message: That's the right answer!
-      time: 5.591
+      time: 3.736
     solution: '1592778185024'
 '07':
   '1':
@@ -130,7 +130,7 @@
       time: 1.348
     '480':
       message: That's the right answer!
-      time: 97.092
+      time: 89.194
     '74639':
       message: You don't seem to be solving the right level!
       time: 99.976
@@ -227,7 +227,7 @@
       time: 1.743
     '2447':
       message: That's the right answer!
-      time: 0.519
+      time: 0.594
     solution: '2447'
   '2':
     '1588':
@@ -235,5 +235,5 @@
       time: 0.27
     '3018019237563':
       message: That's the right answer!
-      time: 1.294
+      time: 1.408
     solution: '3018019237563'
