@@ -213,10 +213,27 @@
       time: 0.255
     '842':
       message: That's the right answer!
-      time: 3.144
+      time: 1.435
     solution: '842'
   '2':
     BFKRCJZU:
       message: That's the right answer!
-      time: 3.229
+      time: 3.338
     solution: BFKRCJZU
+'14':
+  '1':
+    '1588':
+      message: You don't seem to be solving the right level!
+      time: 1.743
+    '2447':
+      message: That's the right answer!
+      time: 0.519
+    solution: '2447'
+  '2':
+    '1588':
+      message: That's not the right answer; your answer is too low!
+      time: 0.27
+    '3018019237563':
+      message: That's the right answer!
+      time: 1.294
+    solution: '3018019237563'
