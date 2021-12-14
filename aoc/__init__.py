@@ -9,7 +9,7 @@ import yaml
 
 import requests
 
-from aoc.constants import INPUTS_DIR, COOKIES, SUBMISSIONS_FILE, URL
+from .constants import INPUTS_DIR, COOKIES, SUBMISSIONS_FILE, URL, EXAMPLES_FILE
 
 
 def raw(day):
@@ -32,21 +32,19 @@ def submit_core(day, func: Callable):
     current = submissions.setdefault(day.rjust(2, '0'), {"1": {}, "2": {}})[part]
 
     start = time.time_ns()
-    solution = func()
+    solution = func(raw(day=day))
 
     if solution is None:
         return
 
     ms = (time.time_ns() - start) / (10 ** 6)
-    print(f"{func.__name__}: {solution} ({ms:.2f} ms)")
 
-    solution = str(solution)
-
+    icon, message, solution = '', '', str(solution)
     if "solution" in current and current["solution"] == solution:
-        print("✅ " + current[solution]['message'])
-        current[solution]['time'] = ms
+        icon, message = "✅", current[solution]['message']
+        current[solution]['time'] = min(current[solution]['time'], ms)
     elif solution in current:
-        print('❗️ Solution already submitted: ' + current[solution]['message'])
+        icon, message = "❗️", current[solution]['message']
     else:
         response = requests.post(
             url=URL.format(day=day) + "/answer",
@@ -62,25 +60,52 @@ def submit_core(day, func: Callable):
         message = re.split(r'[.!]', response_text)[0] + "!"
 
         if response_text.startswith('You gave an answer too recently'):
-            print('⏳ ' + response_text)
-            return
-        elif response_text.startswith("That's the right answer"):
-            print("✅ " + message)
-            current["solution"] = solution
-            if part == "1":
-                webbrowser.open(response.url)
+            icon, message = "⏳", response_text
         else:
-            print("❌ " + message)
-        current[solution] = {"message": message, "time": ms}
+            if response_text.startswith("That's the right answer"):
+                icon = "✅"
+                current["solution"] = solution
+                if part == "1":
+                    webbrowser.open(response.url)
+            else:
+                icon = "❗️"
+            current[solution] = {"message": message, "time": ms}
+
+    print('\t'.join([f"{icon} input:", str(solution), f"({ms:.2f} ms)"]))
 
     SUBMISSIONS_FILE.write_text(yaml.dump(submissions))
 
 
-def submit(day: int):
+def run_example(day: int, func: Callable):
+    day = str(day)
+    part = "1" if func.__name__ == "part_one" else "2"
+    examples = yaml.full_load(EXAMPLES_FILE.read_text())
+    example = examples.setdefault(day.rjust(2, '0'), {"1": {}, "2": {}, "input": ''})
+    input = example['input']
+
+    if input == '':
+        print(f"example:\tSkipping example; no input")
+
+    start = time.time_ns()
+    solution = func(input)
+    expected = example[part]
+    ms = (time.time_ns() - start) / (10 ** 6)
+
+    success = solution == expected
+    icon = "✅" if success else "❗"
+
+    print('\t'.join([f"{icon} example:", str(solution), f"({ms:.2f} ms)"]))
+
+    return success
+
+
+def submit(day: int, skip_example=False):
     def decorator(func: Callable):
         @functools.wraps(func)
         def wrapper():
-            submit_core(day, func)
+            print(f"{func.__name__}:")
+            if skip_example or run_example(day, func):
+                submit_core(day, func)
 
         wrapper()
 
@@ -100,3 +125,5 @@ def timed():
         return wrapper_method
 
     return inner_decorator
+
+# if __name__ == "__main__":
