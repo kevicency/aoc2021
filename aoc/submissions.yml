@@ -193,7 +193,7 @@
       time: 474.422
     '5212':
       message: That's the right answer!
-      time: 19.865
+      time: 3.151
     solution: '5212'
   '2':
     '11663':
@@ -201,7 +201,7 @@
       time: 47.513
     '134862':
       message: That's the right answer!
-      time: 467.884
+      time: 26.715
     '5212':
       message: That's not the right answer; your answer is too low!
       time: 24.979

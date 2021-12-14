@@ -106,12 +106,12 @@ def run_example(day: int, func: Callable):
     return success
 
 
-def submit(day: int, skip_example=False):
+def submit(day: int, skip_example=False, skip_input=False):
     def decorator(func: Callable):
         @functools.wraps(func)
         def wrapper():
             print(f"{func.__name__}:")
-            if skip_example or run_example(day, func):
+            if (skip_example or run_example(day, func)) and not skip_input:
                 submit_core(day, func)
 
         wrapper()
