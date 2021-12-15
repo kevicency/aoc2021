@@ -237,3 +237,14 @@
       message: That's the right answer!
       time: 1.408
     solution: '3018019237563'
+'15':
+  '1':
+    '441':
+      message: ''
+      time: 112.81
+    solution: '441'
+  '2':
+    '2849':
+      message: ''
+      time: 3878.951
+    solution: '2849'
