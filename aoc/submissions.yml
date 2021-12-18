@@ -288,3 +288,14 @@
       message: That's not the right answer!
       time: 534.556
     solution: '3186'
+'18':
+  '1':
+    '4116':
+      message: ''
+      time: 207.148
+    solution: '4116'
+  '2':
+    '4638':
+      message: ''
+      time: 999.148
+    solution: '4638'

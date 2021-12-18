@@ -15,6 +15,9 @@ pandas = "*"
 networkx = "*"
 matplotlib = "*"
 kaleido = "*"
+ipykernel = "==6.2.0"
+ipytest = "*"
+regex = "*"
 
 [dev-packages]
 
