@@ -299,3 +299,20 @@
       message: ''
       time: 4055.061
     solution: '4638'
+'19':
+  '1':
+    '405':
+      message: ''
+      time: 3494.901
+    '594':
+      message: You don't seem to be solving the right level!
+      time: 2635.794
+    solution: '405'
+  '2':
+    '10770':
+      message: You don't seem to be solving the right level!
+      time: 3.745
+    '12306':
+      message: ''
+      time: 5.487
+    solution: '12306'
