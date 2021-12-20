@@ -292,12 +292,12 @@
   '1':
     '4116':
       message: ''
-      time: 207.148
+      time: 0.223
     solution: '4116'
   '2':
     '4638':
       message: ''
-      time: 4055.061
+      time: 3584.567
     solution: '4638'
 '19':
   '1':
@@ -316,3 +316,20 @@
       message: ''
       time: 5.487
     solution: '12306'
+'20':
+  '1':
+    '5359':
+      message: ''
+      time: 1.794
+    '5699':
+      message: You don't seem to be solving the right level!
+      time: 121.724
+    '5711':
+      message: You don't seem to be solving the right level!
+      time: 177.415
+    solution: '5359'
+  '2':
+    '12333':
+      message: ''
+      time: 23.596
+    solution: '12333'
