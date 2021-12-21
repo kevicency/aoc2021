@@ -285,3 +285,9 @@
     ##..#
     ..#..
     ..###
+'21':
+  '1': 739785
+  '2': 444356092776315
+  input: |-
+    Player 1 starting position: 4
+    Player 2 starting position: 8

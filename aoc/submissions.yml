@@ -333,3 +333,14 @@
       message: ''
       time: 23.596
     solution: '12333'
+'21':
+  '1':
+    '506466':
+      message: ''
+      time: 0.239
+    solution: '506466'
+  '2':
+    '632979211251440':
+      message: ''
+      time: 5.684
+    solution: '632979211251440'
